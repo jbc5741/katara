@@ -10,8 +10,7 @@ class setup:
             "storageBucket": ""
         }
         fb = Firebase(config)
-        db = fb.database()
-        return db 
+        return fb
 
     def hx711_config(ref_unit):
         hx = HX711(20, 21)
