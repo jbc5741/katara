@@ -18,9 +18,9 @@
     under the License.
 -->
 <html>
-    <head>
-        <meta charset="utf-8">
-        <!--
+  <head>
+    <meta charset="utf-8" />
+    <!--
         Customize this policy to fit your own app's needs. For more guidance, see:
             https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
         Some notes:
@@ -29,8 +29,8 @@
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
-        <!-- UNCOMMENT FOR CORDOVA USE; COMMENT FOR EASY DEV THROUGH LIVESERVER -->
-        <!-- <meta http-equiv="Content-Security-Policy" 
+    <!-- UNCOMMENT FOR CORDOVA USE; COMMENT FOR EASY DEV THROUGH LIVESERVER -->
+    <!-- <meta http-equiv="Content-Security-Policy" 
         content="default-src * data: cdvfile: gap:; 
                     style-src 'self'  https://cdn.firebase.com
                                     https://*.firebaseio.com
@@ -40,48 +40,45 @@
                                     https://www.gstatic.com/firebasejs/9.4.0/firebase-database.js
                                     'unsafe-eval'
                                     'unsafe-inline'">         -->
-        <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
-        <meta name="color-scheme" content="light dark">
-        <link rel="stylesheet" href="css/index.css">
-        <script  src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.2/chart.min.js"></script>
-        <title>H2Go</title>
-    </head>
-    <body>
-        <!--<div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>-->
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta
+      name="viewport"
+      content="initial-scale=1, width=device-width, viewport-fit=cover"
+    />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="stylesheet" href="css/index.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.2/chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
 
-            <!-- You can remove above; Below is where your code should go; -->
-        <div class="container" style="display: inline-block;">
-            <div class="container">
-                <h2>My Hydration Progress</h2>
-                <div id="water_intake"></div>
-            </div>
+    <title>H2Go</title>
+  </head>
 
-            <div class="container" id="bottlecontainer">
-                <div class="progress" id="bottle" style="height: 200px; transform: rotate(-90deg);">
-                    <div class="progress-bar" role="progressbar" style="width: 40%">40%</div>
-                </div>
-            </div>
-        
-            <div class="container">
-                <canvas id="myChart" width="600" height="400"></canvas>
-            </div>
-        </div>
+  <body>
+    <label id="fileLabel" for="file"></label>
+    <div class="container">
+      <div>
+        <h2>My Hydration Progress</h2>
+        <div id="water_intake"></div>
+      </div>
+      <progress id="file" value="00" max="55000">32</progress>
 
-        <!-- All scripts that affect page render goes here -->
-        <link rel="stylesheet" href="/css/bootstrap.min.css">
-        <script src="/js/bootstrap.min.js"></script>
-        <script src="https://code.jquery.com/jquery.js"></script>
-        <script src="cordova.js"></script>
-        <script src="js/index.js"></script>
-        <script type="module" src="js/firebase.js"></script>
-        <script src="js/chart.js"></script>
-    </body>
+      <div>
+        <canvas id="myChart" width="600" height="400"></canvas>
+      </div>
+    </div>
+
+    <!-- All scripts that affect page render goes here -->
+    <!-- <link rel="stylesheet" href="/css/bootstrap.min.css" /> -->
+    <!-- <script src="/js/bootstrap.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- <script src="cordova.js"></script> -->
+    <script src="js/index.js"></script>
+    <script>
+      let datapoints = [];
+      let times = [];
+    </script>
+    <script type="module" src="js/firebase.js"></script>
+  </body>
 </html>

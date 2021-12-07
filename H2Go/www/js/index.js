@@ -36,8 +36,6 @@ var percent = current/goal*100;
 function updateProgress(newNumber) {
 	progress = document.getElementById('bottle');
 	console.log(progress);
-	progress.innerHTML ="<div class='progress-bar' role='progressbar' style='width:" + newNumber + "%'>" + newNumber + "%</div>";
-	console.log(progress.innerHTML);
 }
 
 updateProgress(percent); //make this and numbers update every minute please!
